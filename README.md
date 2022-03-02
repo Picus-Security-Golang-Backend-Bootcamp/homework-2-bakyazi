@@ -40,6 +40,7 @@ $ ./bin/library list
 52. The Idiot [ID=52] [Author=Fyodor Dostoyevsky] [ISBN=8524762] [StockCode=1793] [Price=$48] [InStock=67]
 ```
 
+
 ### search
 
 search (not found)
