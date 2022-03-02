@@ -64,6 +64,10 @@ func (b *BookList) Buy(id, amount int) error {
 	if err != nil {
 		return err
 	}
+	if book.IsDeleted {
+		// deleted
+		return ErrBookAlreadyDeleted
+	}
 	remaining, err := book.DecreaseAmount(amount)
 	if err != nil {
 		return err
