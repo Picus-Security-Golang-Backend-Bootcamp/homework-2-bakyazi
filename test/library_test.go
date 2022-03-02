@@ -64,8 +64,15 @@ func TestSearch(t *testing.T) {
 	bookList := loadLibrary()
 	var book *library.Book
 
+	// test search with non-matching text
+	result := bookList.Search([]string{"sdjkfsdhjkfhjksd"})
+
+	if len(result) != 0 {
+		t.Fail()
+	}
+
 	// test search with name
-	result := bookList.Search([]string{"moby"})
+	result = bookList.Search([]string{"moby"})
 
 	if len(result) != 1 {
 		t.Fail()
