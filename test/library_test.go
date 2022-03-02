@@ -121,6 +121,13 @@ func TestBuy(t *testing.T) {
 		t.Fail()
 	}
 
+	// buy non exist book and expect to get library.ErrNotFoundBook
+	// since there are only 65 second book
+	err = bookList.Buy(4, 1)
+	if err != library.ErrNotFoundBook {
+		t.Fail()
+	}
+
 }
 
 func TestDelete(t *testing.T) {
